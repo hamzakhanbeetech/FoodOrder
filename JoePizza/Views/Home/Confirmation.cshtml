@@ -1,0 +1,56 @@
+﻿@model JoePizza.Models.Pizza
+
+@{ ViewData["Title"] = "Confirmation"; }
+<div class="container">
+    <h1>Confirmation</h1>
+    <p>Thank you for ordering from Joe’s Pizza</p>
+    <p>Your Order Details are shown below</p>
+    </div>
+
+<div>
+    <h4>Pizza</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PizzaType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PizzaType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Toppings)
+        </dt>
+        <dd class="col-sm-10">
+
+            @if (Model.Toppings == true)
+            {
+                <p>Added Extra toppings</p> }
+            else
+            {
+                <p>No Extra toppings</p>}
+        </dd>
+        <dt class="col-sm-2">
+            Remaining @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+    </dl>
+    <div>
+
+        <a id="back" asp-action="PizzaSelection">Back to List</a>
+    </div>
+</div>
+   
